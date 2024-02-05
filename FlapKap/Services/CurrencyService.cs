@@ -33,7 +33,7 @@ namespace FlapKap.Services
                 result.Message = "user not having enough money for buying";
                 return result;
             }
-            user.Deposit += amount;
+            user.Deposit -= amount;
             await _userManager.UpdateAsync(user);
             return result;
         }
